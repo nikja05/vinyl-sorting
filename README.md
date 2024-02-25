@@ -1,1 +1,2 @@
-Taking the input from user and sorting it in a list or table
+# Vinyl sorting
+Taking user input and sorting into a .txt file
