@@ -1,43 +1,49 @@
 from re import findall
-import string
 
-original_list = []
-last_name_list = []
-alphabet = string.ascii_uppercase
-# regex pattern
-pattern = ",(\s[A-Za-z0-9]+\s?)?\s([A-Za-z0-9]+)"
-
-
-def create_arrays():
-    # loop through vinyls.txt
-    book = open("vinyls.txt", "r")
-    for item in book:
-         
-        # findall returns two dimensional list (theoretically tuple inside of list)
-        # [0][1] finds second item (first might be empty or not)
-        # (the CROOKS, michael JACKSON, QUEEN)
-        last_name = findall(pattern, item)[0][1]
+class SortVinyls():
+    
+    def __init__(self, filename):
+        self.filename = filename
+        self.data_base = []
+        self.load_data_base()
+    
+    def load_data_base(self):
+        file = open(self.filename, "r")
+        for line in file:
+            file.strip()
+            self.data_base.append(line)
+        file.close()
+        self.data_base.sort()
+    
+    def add_vinyl(self, new_vinyl, old_vinyl):
         
-        original_list.append(item)
-        last_name_list.append(last_name)
+        for i in range(len(self.original_list)):
+            if new_vinyl[0] == original_list
+    
+class Vinyl():
+    
+    def __init__(self, vinyl):
+        self.vinyl = vinyl.upper()
+    
+    def __eq__(self, other):
+        return self.vinyl == other.vinyl
+    
+    def __str__(self):
+        return self.vinyl
+    
+    def compare(self, other):
+        len_vinyl = len(self.vinyl)
         
-def search_index(new_last_name):
-
-    for i in range(len(last_names_list)):
+        for i, name in enumerate(len_vinyl):
+            if self.vinyl[i] == other.vinyl[i]:
+                
         
-        if alphabet.index(new_last_name[0].capitalize()) == alphabet.index(last_names_list[i][0].capitalize()):
-            search_index(new_last_name[1:0])
-            
-        else if alphabet.index(new_last_name[0].capitalize()) < alphabet.index(last_names_list[i][0].capitalize()):
-            continue
-        
-        else if alphabet.index(new_last_name[0].capitalize()) > alphabet.index(last_names_list[i][0].capitalize()):
-            # insert method
-
-print("Hi. Please type in the required names. Make sure to write the artist's name as [first_name last_name].")
-# get input from user (ask for album title, artist/band name)
-# vinyl = input("[album name], [artist/band name]: ")
-album_and_artist = "coco, channel"
-new_last_name = findall(pattern, album_and_artist)
-search_index(new_last_name)
-create_arrays()
+v = SortVinyls()
+print(v.original_list)
+# take name of album from list
+# if the first letter of old album is smaller in ascii
+    # insert before
+# elif the first letter of old album is bigger
+    # go to next album
+# else (the letters are equal)
+    # go back to step two, take away the first letters
