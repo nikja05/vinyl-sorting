@@ -13,7 +13,7 @@ def load_db():
     file.close()
 
 def sort_db():
-    data_base.sort()
+    data_base.sort(key = str.casefold)
 
 def add_to_db(item):
     data_base.append(item)
@@ -28,9 +28,9 @@ def out_to_file():
     file.close()
 
 load_db()
-new_input = input("Type STOP to stop adding.\nWhat do you wanna add? ")
-while new_input != "STOP":
+new_input = input("Type X to stop adding.\nWhat do you wanna add? ")
+while new_input != "X":
     add_to_db(new_input)
-    out_to_file()
     new_input = input("\nType STOP to stop adding.\nWhat do you wanna add? ")
+out_to_file()
 print("That was fun! Your items are safe with me.")
