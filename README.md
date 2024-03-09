@@ -1,4 +1,4 @@
-# Vinyl Sorting
+# Vinyl Sorting V1.1 no classes
 
 ## Background
 I wanted to have a file where I could see my vinyl collection.
