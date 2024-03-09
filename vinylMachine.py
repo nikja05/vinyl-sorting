@@ -1,6 +1,6 @@
 # from re import findall
 
-class Machine():
+class VinylMachine():
     
     def __init__(self):
         self.data_base = []
@@ -21,6 +21,9 @@ class Machine():
     def add_to_db(self, new_item):
         self.data_base.append(new_item)
     
+    def delete_everything(self):
+        self.data_base = []
+        
     def write_to_file(self):
         self.sort_db()
     
